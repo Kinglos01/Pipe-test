@@ -42,6 +42,8 @@ int main() {
 
                }
 
+               wait(NULL);
+
            }
        }
             // Child Process for second half min nums
@@ -69,7 +71,7 @@ int main() {
                int ParentReceivedChild;
 
                if (read(pipefd[0],&ParentReceivedChild,sizeof(ParentReceivedChild)) > 0) {
-                   std::cout << "Parent received Child Num = " << ParentReceivedChild << std::endl;
+                   std::cout << "Parent received Child Num from pipe = " << ParentReceivedChild << std::endl;
                }
 
                else{std::cout<<"Error"<<std::endl;}
